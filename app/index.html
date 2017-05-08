@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>Calendar JS</title>
+</head>
+
+<body ng-controller="calendarCtrl" class="ng-scope">
+    <form class="calendar-form" ng-submit="getDate()">
+      <label>Enter date:</label>
+      <input class="calendar-form__input" ng-model="start" type="date"></input>
+      <label>Amount of days:</label>
+      <input class="calendar-form__input" ng-model="amount" type="number"></input>
+      <button type="submit" ng-model="submitButton">Calendar</button>
+    </form>
+    <div ng-if='test'>
+      <calendar selected="day" date="start" days="amount"></calendar>
+    </div>
+<script src="app.js"></script>
+  
+</body>
+
+</html>
+

@@ -1,0 +1,17 @@
+<div class="header">
+<i class="calendar__icon calendar__icon--left fa fa-angle-left" ng-if="weeks[0].days[0].valid" ng-click="previous()"></i>
+  <span class="calendar__title">{{month.format("MMMM, YYYY")}}</span>
+<i class="calendar__icon calendar__icon--right fa fa-angle-right" ng-if="weeks[weeks.length -1].days[weeks[weeks.length -1].days.length -1].valid" ng-click="next()"></i>
+</div>
+<div class="calendar__week calendar__week--header">
+  <span class="calendar__week--day">S</span>
+  <span class="calendar__week--day">M</span>
+  <span class="calendar__week--day">T</span>
+  <span class="calendar__week--day">W</span>
+  <span class="calendar__week--day">T</span>
+  <span class="calendar__week--day">F</span>
+  <span class="calendar__week--day">S</span>
+</div>
+<div class="week" ng-repeat="week in weeks">
+  <span valueDate="valueDate" class="calendar__week--day" ng-class="{'calendar__weekend': day.name == 'S', 'calendar__weekday': day.name != 'S' && day.valid, 'calendar__invalid-date': !day.valid}" ng-click="select(day)" ng-repeat="day in week.days">{{day.number}}</span>
+</div>

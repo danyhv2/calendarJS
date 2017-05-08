@@ -1,0 +1,122 @@
+body {
+      font-family: Arial;
+      font-size: 14px;
+    }
+    
+   
+    .border-box {
+      box-sizing: border-box;
+      -moz-box-sizing: border-box;
+    }
+    
+    calendar {
+      float: left;
+      display: block;
+      box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      background: white;
+      width: 300px;
+      border: solid 1px #cccccc;
+      margin-bottom: 10px;
+    }
+
+    .calendar-form {
+      display: flex;
+      flex-direction: column;
+      width: 135px;
+    }
+
+    .calendar-form__input {
+      margin: 10px 0;
+    }
+    
+    .header {
+      float: left;
+      width: 100%;
+      background: #259246;
+      height: 40px;
+      color: white;
+    }
+    
+    calendar > div.header > * {
+      height: 40px;
+      line-height: 40px !important;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    
+    .calendar__icon {
+      float: left;
+      width: 40px;
+      font-size: 1.125em;
+      font-weight: bold;
+      position: relative;
+      box-sizing: border-box;
+      padding: 0 10px;
+      cursor: pointer;
+    }
+    
+    .calendar__icon--left {
+      text-align: left;
+    }
+    
+    .calendar__icon--right {
+      text-align: right;
+      margin-left: -40px;
+    }
+    
+    .calendar__title {
+      float: left;
+      width: 100%;
+      font-weight: bold;
+      text-transform: uppercase;
+      box-sizing: border-box;
+      padding-left: 50px;
+      margin-left: -40px;
+      text-align: center;
+      padding-right: 40px;
+      color: inherit;
+    } 
+    
+    .calendar__week {
+      float: left;
+      width: 100%;
+      border-top: solid 1px #cccccc;
+    }
+    
+    .calendar__week--header{
+      color: #94979a;
+      font-weight: bold;
+    }
+    
+    .calendar__week--day {
+      float: left;
+      width: 14.28571429%;
+      box-sizing: border-box;
+      border-left: solid 1px #cccccc;
+      border-bottom: solid 1px #cccccc;
+      font-size: 0.75em;
+      text-align: center;
+      height: 30px;
+      line-height: 30px !important;
+      display: inline-block;
+      vertical-align: middle;
+      background: white;
+      cursor: pointer;
+      color: black;
+    }
+  
+    .calendar__weekend{
+      background: #ffff00;
+      color: #a7a0a0;
+    }
+    .calendar__invalid-date{
+      background: #808080;
+      color: #808080;
+    }
+
+    .calendar__weekday{
+      background: #259246;
+      color: #FFFFFF;
+    }
+    
