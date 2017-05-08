@@ -8,10 +8,10 @@ import template from './directive/calendar.tpl.html'
 var app = angular.module("app", []);
 
   app.service('holidayService', ['$http', function($http){
-    this.get = function () {
+    this.get = function (month, year, country) {
         return $http({
             method: 'get',
-            url:    'https://holidayapi.com/v1/holidays?key=bac3b42f-ff7d-44ad-8334-4445a9029d54&country=US&year=2008&month=12',
+            url:    'https://holidayapi.com/v1/holidays?key=bac3b42f-ff7d-44ad-8334-4445a9029d54&country='+country+'&year='+year+'&month='+month,
             cache:  true
         });
       };
@@ -26,9 +26,9 @@ var app = angular.module("app", []);
       $scope.date = $scope.start;
       $scope.days = $scope.amount;
       $scope.day = moment($scope.date);
-      $scope.test = true;
+      $scope.show = true;
 
-      holidayService.get().then(function(response){
+      holidayService.get(($scope.day.month()+1), $scope.day.year(), $scope.country).then(function(response){
         console.log('data',response);
       });
     }
@@ -49,10 +49,6 @@ app.directive("calendar", ['$interval', function($interval) {
     controller: 'calendarCtrl',
     controllerAs: 'calendar',
     link: function(scope, element, attrs, controller) {
-      
-      console.log('hoy', scope.hoy);
-      console.log('month', scope.month);
-
 
       scope.$watchGroup(['date', 'days'], function(newValues, oldValues) {
         scope.start = moment(newValues[0]);
@@ -66,11 +62,6 @@ app.directive("calendar", ['$interval', function($interval) {
         _buildMonth(scope, scope.start, scope.end);
         
         });
-
-      scope.select = function(day) {
-        scope.selected = day.date;
-
-      };
 
       scope.next = function() {
         var next = scope.month.clone();

@@ -13,5 +13,5 @@
   <span class="calendar__week--day">S</span>
 </div>
 <div class="week" ng-repeat="week in weeks">
-  <span valueDate="valueDate" class="calendar__week--day" ng-class="{'calendar__weekend': day.name == 'S', 'calendar__weekday': day.name != 'S' && day.valid, 'calendar__invalid-date': !day.valid}" ng-click="select(day)" ng-repeat="day in week.days">{{day.number}}</span>
+  <span valueDate="valueDate" class="calendar__week--day" ng-class="{'calendar__weekend': day.name == 'S', 'calendar__weekday': day.name != 'S' && day.valid, 'calendar__invalid-date': !day.valid}" ng-repeat="day in week.days">{{day.number}}</span>
 </div>

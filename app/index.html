@@ -11,9 +11,11 @@
       <input class="calendar-form__input" ng-model="start" type="date"></input>
       <label>Amount of days:</label>
       <input class="calendar-form__input" ng-model="amount" type="number"></input>
+      <label>Country code:</label>
+      <input class="calendar-form__input" ng-model="country" type="text"></input>
       <button type="submit" ng-model="submitButton">Calendar</button>
     </form>
-    <div ng-if='test'>
+    <div ng-if='show'>
       <calendar selected="day" date="start" days="amount"></calendar>
     </div>
 <script src="app.js"></script>
