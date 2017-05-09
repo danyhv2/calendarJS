@@ -30,6 +30,8 @@ var app = angular.module("app", []);
 
       holidayService.get(($scope.day.month()+1), $scope.day.year(), $scope.country).then(function(response){
         console.log('data',response);
+      }, function(error){
+      	//handle error response
       });
     }
 
